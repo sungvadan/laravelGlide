@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/images', [\App\Http\Controllers\ImagesController::class, 'index']);
+Route::get('/images/{path}', [\App\Http\Controllers\ImagesController::class, 'index'])->where('path', '.*')->name('images');
 
